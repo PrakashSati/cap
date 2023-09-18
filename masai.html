@@ -13,9 +13,13 @@
     <option value="Male">Male</option>
     <option value="Female">Male</option>
   </select>
-  <button>Apply</button>
+  <button onclick="fun()">Apply</button>
 </body>
 </html>
 <script>
-
+let input = document.getElementById("name")
+function fun()
+{
+    console.log(input.value)
+}
 </script>
