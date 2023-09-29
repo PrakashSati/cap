@@ -11,16 +11,19 @@
   <input type="text" id ="name" placeholder="Enter your name">
   <select id="gender">
     <option value="Male">Male</option>
-    <option value="Female">Male</option>
+    <option value="Female">Female</option>
   </select>
   <button onclick="fun()">Apply</button>
 </body>
 </html>
 <script>
-let input = document.getElementById("name")
+
 function fun()
 {
-    console.log(input.value)
+    let H1 = document.getElementById("display");
+    let N = document.getElementById("name").value;
+    let G = document.getElementById("gender").value;
+    H1.innerText = N || G ;
 }
 </script>
 <!-- Design an application such that when user clicks on Apply button, he should take entered values from both input and select tags and display it in h2 tag with id "display" -->
