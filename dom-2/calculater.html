@@ -1,50 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculater</title>
+    <title>calculater</title>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: cadetblue;
+        }
+
+        #dada {
+            height: auto;
+            padding: 30px 0px 0px 0px ;
+            margin: auto;
+            margin-top: 3%;
+            width: 290px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+         #parent-1 {
+            display: grid;
+            margin: auto;
+            /* border: 1px solid black; */
+            height: auto ;
+            padding: 10px 30px 10px 30px;
+            width: 240px;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #parent-1 > div {
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            /* border: 1px solid green; */
+            height: 30px;
+            width: 230px;
+        }
+
+        #parent-2 {
+            display: grid;
+             grid-template-columns: repeat(4,50px);
+            grid-template-rows: repeat(4,50px);
+            margin: auto;
+            /* border: 1px solid blue; */
+            height: auto ;
+            padding: 0px 30px 30px 30px;
+            width: 240px;
+            text-align: center;
+            gap: 10px;
+            }
+        #parent-2 > div { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            /* border: 1px solid black; */
+            }
+
+            #parent-2 > div:nth-child(4){color: white;background-color: black;}
+            #parent-2 > div:nth-child(8){color: white;background-color: black;}
+            #parent-2 > div:nth-child(12){color: white;background-color: black;}
+            #parent-2 > div:nth-child(15){color: white;background-color: black;}
+            #parent-2 > div:nth-child(16){color: white;background-color: black;}
+            #parent-2 > div:nth-child(13){color: white;background-color: red;}
+        </style>
 </head>
 <body>
-    <input type="text" id="inp1">
-    <input type="text" id="inp2">
-    <!-- <input type="text" id="inp3"> -->
-    <button onclick="b1()">Add</button>
-    <button onclick="b2()">Subtract</button>
-    <button onclick="b3()">Divide</button>
-    <button onclick="b4()">Multiply</button>
+    <h1>Masai Calculater </h1>
+    <div id="dada">
+
+        <div id="parent-1">
+            <input type="text">
+        </div>
+
+        <div id="parent-2">
+            <div class="nums">1</div>
+            <div class="nums">2</div>
+            <div class="nums">3</div>
+            <div class="operater">+</div>
+            <div class="nums">4</div>
+            <div class="nums">5</div>
+            <div class="nums">6</div>
+            <div class="operater">-</div>
+            <div class="nums">7</div>
+            <div class="nums">8</div>
+            <div class="nums">9</div>
+            <div class="operater">x</div>
+            <div>C</div>
+            <div class="nums">0</div>
+            <div>=</div>
+            <div class="operater">/</div>
+        </div>
+
+    </div>
+
 </body>
-<script>
-    let Input1 = document.getElementById("inp1")
-    let Input2 = document.getElementById("inp2")
-   //  let Input3 = document.getElementById("inp3")
-     function b1(){
-        let num1 = Input1.value;
-        let num2 = Input2.value;
-        let res = +num1 + +num2;
-      //   Input3.value = res
-        console.log(res)
-     }
-     function b2(){
-        let num1 = Input1.value;
-        let num2 = Input2.value;
-        let res = +num1 - +num2;
-      //   Input3.value = res
-        console.log(res);
-     }
-     function b3(){
-        let num1 = Input1.value;
-        let num2 = Input2.value;
-        let res = +num1 / +num2;
-      //   Input3.value = res
-        console.log(res);
-     }
-     function b4(){
-        let num1 = Input1.value;
-        let num2 = Input2.value;
-        let res = +num1 * +num2;
-      //   Input3.value = res
-        console.log(res);
-     }
-</script>
 </html>
