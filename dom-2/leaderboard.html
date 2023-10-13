@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: auto;
+            text-align: center;
+            margin-top: 20px;
+        }
         .data{
             display: flex;
             margin: auto;
             width: 50%;
             justify-content: space-between;
+            font-size: 30px;
+        }
+        #data2{
+            display: flex;
+            margin: auto;
+            width: 50%;
+            justify-content: space-between;
+            font-size: 20px;
         }
         .data>div{
             border: 1px solid green;
             padding: 30px;
+            width: 50px;
         }
         .cont{
             margin: auto;
@@ -21,8 +35,14 @@
             margin-top: 40px;
         }
         #score{
-            color: blue;
-            font-size: 18px;
+            color: black;
+            font-size: 30px;
+            /* border: 1px solid green; */
+            padding: 30px;
+            width: 83.5px;
+            background-color: silver;
+            margin-bottom: 20px;
+            height: 30px;
         }
         .keys{
             display: grid;
@@ -30,27 +50,67 @@
             gap: 10px;
             justify-content: center;
         }
+       #enter{
+        display: grid;
+            align-items: center;
+            text-align: center;
+            height: 50px;
+            width: 10%;
+            margin-top: 20px;
+            color: white;
+            background-color: black;
+       }
+       .green{
+        background-color: green;
+        color: black;
+        height: 30px;
+        width: 30px;
+       }
+       .orange{
+        background-color: orangered;
+        color: black;
+        height: 30px;
+        width: 30px;
+       }
+       .one{
+        font-size: 20px;
+       }
+       .purple{
+        background-color: purple;
+        color: black;
+        height: 30px;
+        width: 30px;
+        
+       }
+       }
     </style>
 </head>
 <body>
     <div class="data">
-        <div id="min" style="background-color: red; font-weight: bold;">100</div>
+        <div id="min" style="background-color: red; font-weight: bold; ">100</div>
         <div id="max" style="background-color: green; font-weight: bold;">120</div>
     </div>
+
+    <div id="data2">
+        <div><h2>MIN</h2></div>
+        <div><H2>MAX</H2></div>
+    </div>
+
+    <div class="one"><h2>SCORE</h2></div>
 
     <div class="cont">
         <div id="score"></div>
         <div class="keys">
-            <button>0</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button class="green">1</button>
+            <button class="orange">2</button>
+            <button class="green">3</button>
+            <button class="orange">4</button>
+            <button class="orange">5</button>
+            <button class="orange">6</button>
+            <button class="green">7</button>
+            <button class="orange">8</button>
+            <button class="green">9</button>
+            <button class="purple">0</button>
         </div>
     </div>
     <button id="enter">Enter</button>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIN & MAX LEADERBOARD</title>
+    <style>
+        *{
+            margin: auto;
+            text-align: center;
+        }
+        #parent{
+            height: 100px;
+            width: 30%;
+            display: grid;
+            grid-template-columns: repeat(2,50px);
+            grid-template-rows: repeat(2,50px);
+            margin-top: 40px;
+            gap: 50px;
+            justify-content: space-around;
+        }
+        #parent>h2{
+            margin-left: 50px;
+            text-align: center;
+        }
+        #min{
+        height: 80px;
+            width: 140px;
+            /* display: block; */
+            border: 1px solid black;
+            /* background-color: red; */
+        }
+        #max{
+            height: 80px;
+            width: 140px;
+            /* display: block; */
+            border: 1px solid black;
+            /* background-color: green; */
+        }
+        h3{
+            margin-top: 20px;
+        }
+        #parent2{
+            width: 0%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            /* grid-template-rows: repeat(,); */
+            gap: 20px;
+            margin-top: 20px;
+            margin-left: 686px;
+        }
+        #parent2>button{
+            display: grid;
+            /* padding-top: 8px;
+            padding-bottom: 8px; */
+            align-items: center;
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            border: 1px solid black;
+        }
+        .voilet{
+            display: grid;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            height: 50px;
+            width: 10%;
+            background-color: silver;
+        }
+        .green{
+            background-color: green;
+            color: black;
+        }
+        .orange{
+            background-color: orangered;
+            color: black;
+        }
+        .purple{
+            display: grid;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            background-color: purple;
+            color: white;
+            margin-top: 20px;
+        }
+        .black{
+            display: grid;
+            align-items: center;
+            text-align: center;
+            height: 50px;
+            width: 10%;
+            margin-top: 20px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+      <div id="min"></div>
+      <div id="max"></div>
+      <h2>MIN</h2>
+      <h2>MAX</h2>
+    </div>
+    <h3>SCORE</h3>
+      <h2 class="voilet">#</h2>
+    <div id="parent2">
+      <button class="green">1</button>
+      <button class="orange">2</button>
+      <button class="green">3</button>
+      <button class="orange">4</button>
+      <button class="orange">5</button>
+      <button class="orange">6</button>
+      <button class="green">7</button>
+      <button class="orange">8</button>
+      <button class="green">9</button>
+    </div>
+      <button class="purple">0</button>
+      <button class="black">ENTER</button>
+</body>
+</html>
