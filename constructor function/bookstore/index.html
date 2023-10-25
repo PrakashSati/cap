@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE BOOKSTORE</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Author(authorName,birthYear,nationality){
+        this.authorName = authorName;
+        this.birthYear = birthYear;
+        this.nationality = nationality;
+    }
+
+    function Book(title,Author,genre,price) {
+        this.title = title;
+        this.Author = Author;
+        this.genre = genre;
+        this.price = price;
+
+        this.getBookInfo = function(book) {
+            return Title: ${this.title} Author: ${this.authorName} Genre: ${this.genre} Price: ${this.price};
+        }
+    }
+
+    let author1 = new Author("Chetan Bhagat",1974,"indian");
+    let author2 = new Author("Nathu Ram Godse",1910,"indian");
+    let author3 = new Author("Dr.Bhim Rao Ambedker",1891,"indian");
+    let author4 = new Author("Eiichiro Oda",1975,"japanese");
+
+    let book1 = new Book("Three Mistakes of My Life",author1.name,"Fiction",250);
+    let book2 = new Book("Why I Killed Gandhi",author2.name,"Auto Biography",195);
+    let book3 = new Book("Who Were The Shudras?",author3.name,"history",200);
+    let book4 = new Book("One Piece",author4.name,"Fiction",270);
+
+    console.log(book1.getBookInfo());
+    
+</script>

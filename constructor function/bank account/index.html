@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANK ACCOUNT MANAGEMENT</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [];
+    let activeTotal = 0;
+    let total = 0;
+    function bankAccount(accountNumber,name,type,balance){
+        this.accountNumber = accountNumber;
+        this.name = name;
+        this.type = type;
+        this.balance = balance;
+
+        this.depositeAmount = function(amount) {
+            if(amount > 0) {
+                this.balance+=amount;
+            }else {
+                console.log("invalid deposit amount")
+            }
+        }
+
+        this.withdrawAmount = function(amount) {
+            if(this.balance >= amount) {
+                this.balance-=amount;
+            }else {
+                console.log("insuffficent amount");
+            }
+        }
+
+        this.checkBalance = function() {
+            console.log(this.balance);
+        }
+
+        this.isActive = function() {
+            if(this.balance >= 0){
+                console.log("Your Account Is Active")
+            }else if(this.balance < 0){
+                console.log("your Account Is Not Active")
+            }
+        }
+    }
+
+    var account1 = new bankAccount(8445621,"Ankit","Current",5000);
+    // account1.depositeAmount();
+    // account1.withdrawAmount();
+    // account1.checkBalance();
+    // account1.isActive();
+
+    var account2 = new bankAccount(8445622,"Prakash","Savings",600);
+    // account2.depositeAmount();
+    // account2.withdrawAmount();
+    // account2.checkBalance();
+    // account2.isActive();
+
+    var account3 = new bankAccount(8445623,"Aditya","Current",4000);
+    // account3.depositeAmount();
+    // account3.withdrawAmount();
+    // account3.checkBalance();
+    // account3.isActive();
+
+    var account4 = new bankAccount(8445624,"Nirmal","Savings",-800);
+    // account4.depositeAmount();
+    // account4.withdrawAmount();
+    // account4.checkBalance();
+    // account4.isActive();
+
+    var account5 = new bankAccount(8445625,"Adarsh","Current",-2);
+    // account5.depositeAmount();
+    // account5.withdrawAmount();
+    // account5.checkBalance();
+    // account5.isActive();
+
+    arr.push(account1.balance);
+    arr.push(account2.balance);
+    arr.push(account3.balance);
+    arr.push(account4.balance);
+    arr.push(account5.balance);
+    
+    console.log(arr);
+
+    arr.map((ele)=>{
+        if(ele > 0){
+        activeTotal += ele;
+        };
+    })
+    arr.map((ele)=>{
+        total += ele;
+    })
+    console.log(total);
+    console.log(activeTotal);
+</script>
