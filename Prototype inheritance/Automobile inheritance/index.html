@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOMOBILE INHERITANCE MODEL</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function automobile(body, window, tyres, color, seats, engine) {
+        this.body = body;
+        this.window = window;
+        this.tyres = tyres;
+        this.color = color;
+        this.seaters = seats;
+        this.engine = engine;
+    }
+    automobile.prototype.start = function() {
+        console.log("raa taa ta ta")
+    }
+    automobile.prototype.stop = function() {
+        console.log("car is stopping")
+    }
+    function automobileGen2(body, window, tyres, color, seats, engine, booster) {
+        automobile.call(this, body, window, tyres, color, seats, engine)
+        this.booster = booster;
+        Object.setPrototypeOf(automobileGen2.prototype, automobile.prototype)
+    }
+    let car1 = new automobileGen2("steel", 4, 4, "black", "leather", "Jet Engine", "Super Sonic Turbo Booster")
+    Object.setPrototypeOf(car1, automobileGen2.prototype)
+    console.log(car1);
+     let car2 = Object.create(car1);
+     console.log(car2);
+</script>
