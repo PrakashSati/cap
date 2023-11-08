@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        *{
+            /* margin: auto; */
+        }
+        #parent {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        #image {
+            width: 95%;
+        }
+        #iag {
+            width: 100%;
+        }
+        #prev,#next {
+            width: 2.5%;
+        }
+        #sop {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <button id="prev" onclick="prev()"> < </button>
+        <div id="image">
+            <img id="iag" src="" alt="">
+        </div>
+        <button id="next" onclick="next()"> > </button>
+    </div>
+    <button id="sop" onclick="start()">Start</button>
+</body>
+</html>
+<script>
+    const data = [
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/eab800bf91815ca4.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/d489d614c62145c7.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/78f0374b0191d762.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/39002010fec3acbb.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3b227ed34c7c688a.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/bb35af7b3673ec73.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/dcd2cb9f5712b33e.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/eab800bf91815ca4.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/d489d614c62145c7.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/78f0374b0191d762.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/39002010fec3acbb.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3b227ed34c7c688a.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/bb35af7b3673ec73.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/dcd2cb9f5712b33e.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/eab800bf91815ca4.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/d489d614c62145c7.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/78f0374b0191d762.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/39002010fec3acbb.jpg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/3b227ed34c7c688a.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/bb35af7b3673ec73.jpeg?q=20",
+    "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/dcd2cb9f5712b33e.jpg?q=20",
+
+]
+    let img = document.querySelector('img');
+    let stop = document.querySelector('#sop');
+    let currentImg = 0;
+    let timer = null;
+    let flag = false;
+    img.setAttribute("src", data[currentImg]);
+    
+
+    function start(){
+        stop.innerText = "Stop";
+        if(flag == false){
+            flag= true;
+            timer = setInterval(updateImg,400);
+        }else if(stop.innerText == "Stop"){
+            clearInterval(timer);
+            flag = false;
+            stop.innerText = "Start";
+        }
+    }
+
+    function prev(){
+        clearInterval(timer);
+        flag = false;
+        currentImg--;
+        if(currentImg < 0){
+            currentImg = data.length-1;
+        }
+        img.setAttribute("src", data[currentImg]);
+    }
+    function next(){
+        clearInterval(timer);
+        flag = false;
+        currentImg++;
+        if(currentImg > data.length-1){
+            currentImg = 0;
+        }
+        img.setAttribute("src", data[currentImg]);
+    }
+    function updateImg(){
+        if(flag == true){
+            currentImg++;
+        }
+        if(currentImg < 0){
+                currentImg = data.length-1;
+            }
+            if(currentImg > data.length-1){
+                currentImg = 0;
+            }
+        img.setAttribute("src", data[currentImg]);
+    }
+</script>
