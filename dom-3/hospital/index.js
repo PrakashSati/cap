@@ -49,6 +49,3 @@ myForm.addEventListener("submit", function(e){
   })
 });
 
-array.forEach(element => {
-  
-});
