@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>StudyLab </title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        #first{
+            display: flex;
+            justify-content: space-around;
+            height: auto;
+            width: 100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            align-items: center;
+            margin: auto;
+        }
+        .par{
+            background-color: blueviolet;
+            width: 11%;
+            text-align: center;
+            color: whitesmoke;
+
+        }
+        .child{
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+        }
+        #second{
+            height: auto;
+            margin: auto;
+            width: 88%;
+            display: flex;
+            justify-content: space-around;
+        }
+        #second>div{
+            width: 40%;
+        }
+        
+        .same{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            padding: 0px 15px 0px 20px ;
+            width: 35%;
+        }
+        .same>img{
+            width: 50px;
+        }
+        .parent-1{
+            display: flex;
+            height: 200px;
+            justify-content: space-evenly;
+           padding: 10px ;
+        }  
+        .parent-2{
+            display: flex;
+            height: 200px;
+            justify-content: space-evenly;
+            padding: 10px;
+        }   
+        button{
+            border:none;
+            background-color:whitesmoke;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="first">
+        <div class="par"><h3>StudyLab</h3></div>
+        <div class="child">
+           <div><button style="color: aqua;">Home</button>
+            <button>About</button>
+            <button>Course</button>
+            <button>Instructor</button>
+            <button>Blog</button>
+            <button>Contact</button></div>
+        </div>
+    </div>
+    <br><br><br>
+    <div id="second">
+        <div><h5 style="color: aqua;">WELCOME TO STUDYLAB</h5>
+            <h1>We Are StudyLab An Online Learning Center</h1>
+            <h4 style="color: gray;">A small river named Duden Flows by their place and suppplies it with the necessary regelialia.It is a paradisematic country,in which roasted parts of sentences fly into your mouth.  </h4>
+            <h4 style="color: gray;">Far far away,behind the word mountains,far from the countries Vokalia and Consonantia,there live the blind texts.Separated they live in Bookmarksgrove right at tha coast of the Semantics,a large language ocean. </h4>
+            <img src="https://www.masaischool.com/img/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt=""> Learn anything from StudyLab, Watch video
+        </div>
+        <div>
+            <div class="parent-1">
+                <div class="same">
+                    <img src="https://www.masaischool.com/img/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt="">
+                    <h3>Top Quality Content</h3>
+                    <p>A small river named
+                        <br> duden Flows by their <br>place and supplies</p>
+                </div>
+                <div class="same">
+                    <img src="https://www.masaischool.com/img/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt="">
+                    <h3>Highly Skilled
+                        <br> Instructor</h3>
+                    <p>A small river named
+                        <br> duden Flows by their <br>place and supplies</p>
+                    
+                </div>
+            </div>
+            <div class="parent-2">
+                <div class="same">
+                    <img src="https://www.masaischool.com/img/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt="">
+                    <h3>World Class & Quiz</h3>
+                    <p>A small river named
+                        <br> duden Flows by their <br>place and supplies</p>
+                    
+                </div>
+                <div class="same">
+                    <img src="https://www.masaischool.com/img/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt="">
+                    <h3>Get Certified</h3>
+                    <p>A small river named
+                        <br> duden Flows by their <br>place and supplies</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

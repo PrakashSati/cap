@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>calculater</title>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: cadetblue;
+        }
+
+        #dada {
+            height: auto;
+            padding: 30px 0px 0px 0px ;
+            margin: auto;
+            margin-top: 3%;
+            width: 290px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+         #parent-1 {
+            display: grid;
+            margin: auto;
+            /* border: 1px solid black; */
+            height: auto ;
+            padding: 10px 30px 10px 30px;
+            width: 240px;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #parent-1 > div {
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            /* border: 1px solid green; */
+            height: 30px;
+            width: 230px;
+        }
+
+        #parent-2 {
+            display: grid;
+             grid-template-columns: repeat(4,50px);
+            grid-template-rows: repeat(4,50px);
+            margin: auto;
+            /* border: 1px solid blue; */
+            height: auto ;
+            padding: 0px 30px 30px 30px;
+            width: 240px;
+            text-align: center;
+            gap: 10px;
+            }
+        #parent-2 > div { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            /* border: 1px solid black; */
+            }
+
+            #parent-2 > div:nth-child(4){color: white;background-color: black;}
+            #parent-2 > div:nth-child(8){color: white;background-color: black;}
+            #parent-2 > div:nth-child(12){color: white;background-color: black;}
+            #parent-2 > div:nth-child(15){color: white;background-color: black;}
+            #parent-2 > div:nth-child(16){color: white;background-color: black;}
+            #parent-2 > div:nth-child(13){color: white;background-color: red;}
+        </style>
+</head>
+<body>
+    <h1>Masai Calculator </h1>
+    <div id="dada">
+
+        <div id="parent-1">
+            <div></div>
+        </div>
+
+        <div id="parent-2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>x</div>
+            <div>C</div>
+            <div>0</div>
+            <div>=</div>
+            <div>/</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
