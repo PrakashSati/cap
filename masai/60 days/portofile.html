@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f4; /* Adding a light background color */
+            background-color: #f4f4f4; 
         }
 
         header {
@@ -20,7 +20,7 @@
             text-align: center;
         }
 
-        nav {
+        #first {
             background-color: #444;
             padding: 10px;
             display: flex;
@@ -28,8 +28,8 @@
             align-items: center;
         }
 
-        nav a, nav select {
-            color: #fff; /* Colorful font */
+        #first a, #first select {
+            color: #fff; 
             text-decoration: none;
             padding: 10px;
             border: none;
@@ -38,18 +38,18 @@
             font-size: 16px;
         }
 
-        nav select {
+        #first select {
             display: none;
         }
 
       
 
         @media only screen and (max-width: 768px) {
-            nav a {
+            #first a {
                 display: none;
             }
 
-            nav select {
+            #first select {
                 display: inline-block;
                 appearance: none;
                 -webkit-appearance: none;
@@ -71,8 +71,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             border: 1px solid #ccc;
-            background-color: #fff; /* Adding a white background color */
-            color: #333; /* Changing text color to a darker shade */
+            background-color: #fff; 
+            color: #333; 
         }
 
         section img {
@@ -110,20 +110,13 @@
     <h1 style="color: #00bcd4;">My Portfolio</h1>
 </header>
 
-<nav>
+<div id="first">
     <a href="#home">Home</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact Me</a>
-    <select>
-        <option value="#home">Home</option>
-        <option value="#education">Education</option>
-        <option value="#projects">Projects</option>
-        <option value="#skills">Skills</option>
-        <option value="#contact">Contact Me</option>
-    </select>
-</nav>
+</div>
 
 <section id="home">
     <div>
