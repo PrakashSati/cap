@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check Your BMI</h1>
+    <h2>Enter your weight and heigt below to check your BMI results</h2>
+    <h2>Put Your weight in here (KG)</h2>
+    <input id="weight" type="number" placeholder="Weight">
+    <h2>And your height in here (CM)</h2>
+    <input id="height" type="number" placeholder="Height">
+    <button id="btm">Calculate BMI</button>
+    <h2 id="h2"></h2>
+</body>
+</html>
+<script>
+    let h2 = document.getElementById("h2");
+    let height = document.getElementById("height");
+    let weight = document.getElementById("weight");
+    let button = document.getElementById("btm");
+    button.addEventListener("click",function(){
+        h2.innerText = "Your BMI is "+ +weight.value / (+height.value * +height.value / 10000) + " Which means You are Obese"
+    })
+</script> 

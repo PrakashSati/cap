@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Investors Using DOM</title>
+    <style>
+        * {
+            font-family: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+            margin: auto;
+            text-align: center;
+        }
+        .bord {
+            margin-top: 30px;
+        }
+        #container1 {
+            width: 75%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        #container2 {
+            height: auto;
+            width: 87%;
+            border: 0px solid red;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .investors {
+            width: 22%;
+            height: 100%;
+            border: 0px solid blue;
+            border-radius: 10px 10px 0px 0px;
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;;
+        }
+        .invPic {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .comLogo {
+            height: 40px;
+            width: 140px;
+            margin: auto;
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body></body>
+</html>
+<script>
+    let body = document.querySelector('body');
+    let mainContainer = document.createElement('div');
+    mainContainer.id = 'mainCont';
+    
+    let boardMemberText = document.createElement('h1');
+    boardMemberText.className = 'bord';
+    boardMemberText.textContent = 'Board Members';
+    
+    let firstContainer = document.createElement('div');
+    firstContainer.id = 'container1';
+
+    let array1 = [
+        {
+            src: "https://www.masaischool.com/images/our-investors/india-q-borderless.svg",
+        },{
+            src: "https://www.masaischool.com/images/our-investors/capria-logo.svg",
+        },{
+            src: "https://www.masaischool.com/images/our-investors/omidyar-borderless.svg"
+        }
+        
+    ];
+    function ShowData1(){
+        array1.forEach(function(data){
+            let imageDiv = document.createElement('div');
+            imageDiv.className = 'logoDiv';
+            
+            let image = document.createElement('img');
+            image.className = 'logo';
+            image.src = data.src;
+            
+            imageDiv.append(image);
+            firstContainer.append(imageDiv);
+        });
+    };
+    let strategicText = document.createElement('h1');
+    strategicText.className = 'bord';
+    strategicText.textContent = 'Strategic Investors';
+    let array = [
+        {
+            investorSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            names: 'Vijay Shekhar Sharma',
+            positions: 'Founder & CEO',
+            logoSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg",
+        },
+        {
+            investorSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+            names: 'Kunal Shah',
+            positions: 'Founder',
+            logoSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png",
+        },
+        {
+            investorSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+            names: 'Amrish Rau',
+            positions: 'CEO',
+            logoSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png",
+        },
+        {
+            investorSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            names: 'Sampad Swain',
+            positions: 'Co-Founder & CEO',
+            logoSrc: "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png",
+        }
+    ];
+    let secondContainer = document.createElement('div');
+    secondContainer.id = 'container2';
+    function ShowData2() {
+        array.forEach(function(data){
+            let investors = document.createElement('div');
+            investors.className = 'investors';
+            
+            let investorPic = document.createElement('img');
+            investorPic.className = 'invPic';
+            investorPic.src = data.investorSrc;
+            
+            let name = document.createElement('h3');
+            name.innerContent = data.names;
+            
+            let Position = document.createElement('p');
+            Position.innerText = data.positions;
+
+            let logoPic = document.createElement('img');
+            logoPic.className = 'comLogo';
+            logoPic.src = data.logoSrc;
+
+            investors.append(investorPic, name, Position, logoPic);
+            secondContainer.append(investors);
+        })
+    }
+    mainContainer.append(boardMemberText, firstContainer, strategicText, secondContainer);
+    body.append(mainContainer);
+    ShowData1();
+    ShowData2();
+</script>
