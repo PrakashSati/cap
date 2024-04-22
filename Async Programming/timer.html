@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: salmon;
+            padding: 25vh 15vh 0px 70vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        input{
+            font-size: large;
+            background-color: antiquewhite;
+            border-radius: 20px;
+        }
+        label{
+            font-size: large;
+            background-color: antiquewhite;
+            border-radius: 20px;
+        }
+        button{
+            background-color: antiquewhite;
+            color: black;
+            border-radius: 50px;
+            padding: 10px;
+            margin: 10px 15vh 0px 10vh;
+            background-color: antiquewhite;
+        }
+        
+    </style>
 </head>
 <body>
 
    <label >Hours:</label> 
-   <input type="number" id="hours" min="0" value="0">
+   <input type="number" id="hours" min="0" >
    
    <label >Minutes:</label>
-   <input type="number" id="minutes" min="0" max="59" value="0">
+   <input type="number" id="minutes" min="0" max="59">
 
    <label >Seconds:</label>
-   <input type="number" id="seconds" min="0" max="59" value="0">
-   <div style="margin-top: 10px;">
+   <input type="number" id="seconds" min="0" max="59" >
+   <div style="margin: auto;">
    <button onclick="startTimer()">Start</button>
    <button onclick="pauseTimer()">Pause</button>
    <button onclick="resetTimer()">Reset</button>
@@ -26,44 +52,62 @@
 
     let timeremaning;
     let intervalId;
-
+    let catchhrs;
+    let catchmins;
+    let catchsecs;
+    let flag = false;
+    
     function startTimer(){ 
-        let hours =Number(document.getElementById('hours').value);
-        let minutes = Number(document.getElementById('minutes').value);
-        let seconds = Number(document.getElementById('seconds').value);
+        if(flag === false) {
+            flag = true;
 
-        timeremaning = hours * 3600 + minutes * 60 + seconds;
-
-        intervalId = setInterval(function(){
-            timeremaning--;
-
-            let hrs = Math.floor(timeremaning / 3600);
-            let mins = Math.floor((timeremaning % 3600) / 60);
-            let secs = timeremaning % 60 ;
-
-            document.getElementById('hours').value = hrs;
-            document.getElementById('minutes').value = mins;
-            document.getElementById('seconds').value = secs;
-
-            if(timeremaning <= 0){
-                clearInterval(intervalId);
-                intervalId = null;
-
-                alert("Time is not remaning");
-            }
-        },1000)
+            catchhrs = document.getElementById("hours").value;
+            catchmins = document.getElementById("minutes").value;
+            catchsecs = document.getElementById("seconds").value;
+            
+            
+            let hours =Number(document.getElementById('hours').value);
+            let minutes = Number(document.getElementById('minutes').value);
+            let seconds = Number(document.getElementById('seconds').value);
+            
+            timeremaning = hours * 3600 + minutes * 60 + seconds;
+            
+            
+            
+            intervalId = setInterval(function(){
+                timeremaning--;
+                
+                let hrs = Math.floor(timeremaning / 3600);
+                let mins = Math.floor((timeremaning % 3600) / 60);
+                let secs = timeremaning % 60 ;
+                
+                document.getElementById('hours').value = hrs;
+                document.getElementById('minutes').value = mins;
+                document.getElementById('seconds').value = secs;
+                
+                if(timeremaning <= 0){
+                    clearInterval(intervalId);
+                    intervalId = null;
+                    
+                    alert("Time is not remaning");
+                }
+            },1000)
+         
+        }
     }
 
     function pauseTimer(){
+        flag = false;
         clearInterval(intervalId);
         intervalId = null;
     }
 
     function resetTimer(){
+        flag = false;
         pauseTimer();
-        document.getElementById('hours').value = 0;
-        document.getElementById('minutes').value = 0;
-        document.getElementById('seconds').value = 0;
+        document.getElementById('hours').value = catchhrs;
+        document.getElementById('minutes').value = catchmins;
+        document.getElementById('seconds').value = catchsecs;
 
     }   
 
