@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // Your JSX code here
+      // catching the html root element.
+      let header = document.getElementById("root");
+      // by using JSX crating task1.
+      let task1 = (
+        <>
+          <p>seize the day</p>
+        </>
+      )
+      // by using JSX crating task2.
+      let task2 = (
+        <>
+          <p>open the day</p>
+        </>
+      )
+
+      let variable = true;
+       // hear we're render task to root element by using conditionalrendring. 
+      if(variable){
+        ReactDOM.createRoot(header).render(task1)
+      }
+      else{
+        ReactDOM.createRoot(header).render(task2)
+      }
+    </script>
+
+  </body>
+</html>
