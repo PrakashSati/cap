@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #root {
+      width: 80%;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin: 5% auto auto auto;
+      padding: 0.5%;
+      gap: 5px;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your ItemList component code will go here
+    let renderElement = document.querySelector('#root');
+
+    let Gallery = (props) => {
+      return <img src={props.Children}/>
+    };
+    let element = (
+        <>
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        <Gallery Children="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_640.jpg" />
+        </>
+    )
+
+
+    ReactDOM.createRoot(renderElement).render(element)
+  </script>
+</body>
+</html>
