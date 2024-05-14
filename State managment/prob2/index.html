@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let arr = [];
+    let App = () => {
+      let [hobby, setHobby] = React.useState('')
+      let handelPushArray = (event) => {
+        setHobby(event.target.value)
+      };
+      let handelAdd = (e) => {
+        e.preventDefault()
+        arr.push(hobby);
+        setHobby("");
+      };
+      let handelRemove = (e) => {
+        e.preventDefault()
+        setHobby("");
+        for(let i = 0; i < arr.length; i++) {
+          if(hobby === arr[i]) {
+            arr[i] = "";
+            break;
+          };
+      };
+      };
+      let submitbtn = (e) => {
+        e.preventDefault()
+        console.log(arr);
+      };
+      return (
+        <>
+          <form>
+            <input onChange={handelPushArray} type="text" placeholder="write your hobby" value={hobby}/>
+            <button onClick={handelAdd}>Add Your Hobby</button>
+            <button onClick={handelRemove}>Remove Your Hobby</button>
+            <input onClick={submitbtn} type="submit"/>
+          </form>
+        </>
+      )
+    };
+    let rootElement = document.getElementById("root");
+    ReactDOM.createRoot(rootElement).render(<App />);
+  </script>
+</html> 

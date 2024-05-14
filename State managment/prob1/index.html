@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+      body{
+        background-color: rgb(198, 161, 167);
+      }
+      .div{
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    function App() {
+      const [color, setColor] = React.useState("#FFFFFF");
+      let changeColor = (event) => {
+        setColor(event.target.value);
+      };
+      console.log(color)
+        return (
+          <div
+          style={{
+            width: '60%',
+            border: '1px solid',
+            textAlign: 'center',
+            backgroundColor: 'black',
+            margin: 'auto',
+          }}>
+            <input onChange={changeColor} placeholder="Type Your HEX Color Code" value={color}/>
+            <h1 style={{color: color,margin:'auto'}}>Your color preview</h1>
+            <div style={{backgroundColor: color, margin: 'auto'}} className='div'></div>
+          </div>
+        );
+      }
+      let rootElement = document.getElementById("root");
+      ReactDOM.createRoot(rootElement).render(<App />);
+  </script>
+</html>

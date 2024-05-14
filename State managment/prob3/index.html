@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let rootElement = document.getElementById("root");
+    // Your  code will go here
+    let App = () => {
+      let [score, setScore] = React.useState(0);
+      let handelScore = (e) => {
+        e.preventDefault();
+          if(one1.checked === true) {
+            setScore(10)
+          };
+          if(four2.checked === true) {
+            setScore(10)
+          };
+          if(three3.checked === true) {
+            setScore(10)
+          };
+          if(one1.checked === true && four2.checked === true) {
+            setScore(20)
+          };
+          if(one1.checked === true && three3.checked === true) {
+            setScore(20)
+          };
+          if(four2.checked === true && three3.checked === true) {
+            setScore(20)
+          };
+          if(one1.checked === true && four2.checked === true && three3.checked === true) {
+            setScore(30)
+          };
+        };
+        rootElement.innerHTML = `
+        <div>
+          <h1>Your Score ${score}</h1>
+        </div>`
+      return (
+        <>
+          <form>
+            <h1>Your Quiz</h1>
+            <h3>Que:1 - color of Apple</h3>
+            <div>
+              <input id="one1" type="checkBox"/>
+              <label>Red</label>
+            </div>
+            <div>
+              <input id="two1" type="checkBox"/>
+              <label>Blue</label>
+            </div>
+            <div>
+              <input id="three1" type="checkBox"/>
+              <label>Yellow</label>
+            </div>
+            <div>
+              <input id="four1" type="checkBox"/>
+              <label>Orange</label>
+            </div>
+            <h3>Que:2 - color of Orange</h3>
+            <div>
+              <input id="one2" type="checkBox"/>
+              <label>Red</label>
+            </div>
+            <div>
+              <input id="two2" type="checkBox"/>
+              <label>Blue</label>
+            </div>
+            <div>
+              <input id="three2" type="checkBox"/>
+              <label>Yellow</label>
+            </div>
+            <div>
+              <input id="four2" type="checkBox"/>
+              <label>Orange</label>
+            </div>
+            <h3>Que:3 - color of Banana</h3>
+            <div>
+              <input id="one3" type="checkBox"/>
+              <label>Red</label>
+            </div>
+            <div>
+              <input id="two3" type="checkBox"/>
+              <label>Blue</label>
+            </div>
+            <div>
+              <input id="three3" type="checkBox"/>
+              <label>Yellow</label>
+            </div>
+            <div>
+              <input id="four3" type="checkBox"/>
+              <label>Orange</label>
+            </div>
+            <input onClick={handelScore} type="submit"/>
+          </form>
+        </>
+      )
+    };
+      ReactDOM.createRoot(rootElement).render(<App />);
+  </script>
+</html>
