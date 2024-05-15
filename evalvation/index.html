@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="mainCont">
+        <h1>Employee Management System</h1>
+        <header>
+            <nav>
+                <label>Filter by Department</label>
+                <select id="department">
+                    <option value="selectDepartment">select Department</option>
+                    <option value="hr">--Hr--</option>
+                    <option value="marketing">--Marketing--</option>
+                    <option value="finance">--Finance--</option>
+                    <option value="engineering">--Engineering--</option>
+                    <option value="operations">--Operations--</option>
+                </select>
+                <label>Filter by Gender</label>
+                <select id="gender">
+                    <option value="gender">select Gender</option>
+                    <option value="male">--Male--</option>
+                    <option value="female">--Female--</option>
+                    <option value="others">--Other--</option>
+                </select>
+                <label>Sort by Salary</label>
+                <select id="salary">
+                    <option value="selectSalary">select Salary</option>
+                    <option value="asc">--Low to High--</option>
+                    <option value="desc">--High to Low--</option>
+                </select>
+            </nav>
+        </header>   
+        <div id="fetchDataContainer">
+            <table>
+                <thead>
+                    <tr class="employeesCard">
+                        <th>S.no</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div id="btnDiv">
+            <button id="perv">Perv</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>

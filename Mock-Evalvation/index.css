@@ -1,0 +1,36 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: auto;
+}
+#container>div{
+    /* border: 1px solid green; */
+    padding: 20px 10px 0px 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+#container>div>img{
+    width: 50%;
+    height: 60%;
+}
+nav{
+    display: flex;
+    margin: 20px;
+    background-color: purple;
+    padding: 5px;
+}
+#div2{
+    margin: 35px 0px 0px 15%;
+}
+select,input{
+    font-size: 20px;
+}
+#div3{
+    margin: 35px 0px 0px 20%;
+}
+h1{
+    color: white;
+    font-size: 34px;
+}
