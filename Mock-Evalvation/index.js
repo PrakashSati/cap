@@ -1,12 +1,12 @@
 let container = document.getElementById("container");
 
-    let getData = async (url) => {
-        let res = await fetch(url);
-        let data = await res.json();
-        showData(data);
-    }   
-   
-    getData(`https://fakestoreapi.com/products`);
+let getData = async (url) => {
+    let res = await fetch(url);
+    let data = await res.json();
+    showData(data);
+}   
+
+getData(`https://fakestoreapi.com/products`);
 
     let showData = (arr) => {
         container.innerHTML = ""
